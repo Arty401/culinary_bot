@@ -57,7 +57,6 @@ async def search_step1(message: types.Message):
 
 @dp.message_handler(state=SearchByTitle.Title)
 async def search_step2(message: types.Message, state: FSMContext):
-
     if message.text == "❌Отмена❌":
         await state.reset_state(with_data=True)
         await message.answer("Возвращаюсь...", reply_markup=menu)
